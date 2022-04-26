@@ -1,12 +1,130 @@
 # Real-Time Web @cmda-minor-web 2021 - 2022
 
-## Table of Contents
-- [Synopsis](#synopsis)
-- [Description](#description)
+![Interface van de app](https://raw.githubusercontent.com/basv1996/progressive-web-apps-2122/main/docs/img/.....)
+
+# Live Link
+:globe_with_meridians: [Link naar live app](https://browser-technology-2122.herokuapp.com/)
+
+---
+
+# Table of Contents
+- [Live link ](#live-link)
+- [Description](#project-description)
 - [Communication](#communication)
 - [Goals](#goals)
 - [Grading](#grading)
 - [Programme](#programme)
+
+---
+
+# :book:Project description
+
+For this assignment I wanted to create a guessing game. With the implemantations of sockets I want to create a real time web app. I will use the techniques to set up an open connection between the client and the server. This will enable me to send data in real-time both wayd
+
+---
+
+## :gear:Installation
+1. Clone this repo
+```
+git clone https://github.com/basv1996/real-time-web-2122.git
+```
+2. Make sure you're in the right folder
+```
+cd real-time-web-2122
+```
+3. Install dependencies
+```
+npm install
+```
+4. Start the application
+```
+npm start
+```
+5. For development you can run it in dev mode
+```
+npm run dev
+```
+
+---
+
+## Ideation
+
+For this project I skecthed multiple ideas for me to create. I Thought about a hangman game, a movie guesser game, catch the pokemon game and a guess that pokemon game. I decided to go for the `who's that pokemon` game.
+
+## Who's that pokemon?
+![Who's that pokemon](https://user-images.githubusercontent.com/15678757/165141741-c1799201-2e62-4ef6-8c73-1bbdd87bcf63.png)
+
+### Hangman
+![Hangman game](https://user-images.githubusercontent.com/15678757/165140720-a41e474b-b5a6-4f3d-a3d7-215fc0ac698e.png)
+
+## Catch the pokemon
+![catch the pokemon](https://user-images.githubusercontent.com/15678757/165140887-8b1c86ab-f580-40da-a3a1-d9d007ef4b52.png)
+
+## Movie guesser
+![movie guesser](https://user-images.githubusercontent.com/15678757/165141278-71f39862-e57e-4f0d-ac2a-b768f5eed1cf.png)
+
+## Movie guesser chat bot
+![Movie guesser chat bot](https://user-images.githubusercontent.com/15678757/165141402-3fd870dc-d8d6-4ff7-bb40-5bf5bd7cc281.png)
+
+## Data Model
+
+
+
+
+## API
+The API I chose is the pokemon API. With this API I can get all the pokemons with their sprite and statistics. 
+
+## :clipboard:MOSCOW feature list
+#### Must have:
+* [ ] Chatting with display name
+* [ ] Guess correct with feedback
+* [ ] Loading API data
+
+
+#### Should have: 
+* [ ] Chat history
+* [ ] Scoreboard
+* [ ] UI-stack
+* [ ] Next question button
+
+
+ 
+#### Could have:
+* [ ] Chat timestamps
+* [ ] Detailed stats
+* [ ] Profile authentication
+* [ ] Give me a hint button
+
+
+#### Would have:
+
+
+---
+
+## :package: NPM packages
+Discriptions are from the websites given or written by me when not existing.
+
+### Dotenv
+[Dotenv](https://www.npmjs.com/package/dotenv) is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+
+### EJS
+[Ejs](https://www.npmjs.com/package/ejs) is a template engine used to create dynamic web pages.
+
+### Express
+[Express](https://www.npmjs.com/package/express) is a small framework used to create node servers, making routing easier to setup and use.
+
+### Nodemon
+[Nodemon](https://www.npmjs.com/package/nodemon) is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+### Socket.IO
+[ Socket.IO](https://www.npmjs.com/package/socket.io) enables real-time bidirectional event-based communication
+
+### Node-Fetch
+[ Node Fecth](https://www.npmjs.com/package/node-fetch) A light-weight module that brings Fetch API to Node.js.
+
+<!-- 
+### EsLint
+[ESLint](https://www.npmjs.com/package/eslint) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code -->
 
 ## Synopsis
 - Course: Real-Time Web
@@ -123,6 +241,11 @@ We will have our final [peer review session](./course/peer-review.md). You will 
 | | Tribe *+(Shyanta, Justus)* | Peer review |
 | | Tribe *+(Shyanta, Justus)* | Finalize your assignment |
 | 16.00 | Tribe *+(Shyanta, Justus)* | (drinks?!) |
+
+# Credits
+- Shyanta Vleugel ([@shyanta](https://github.com/shyanta))  
+- Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5))
+- Daan Korver ([@daankorver](https://github.com/DaanKorver))
 
 
 <!-- Here are some hints for your project! -->
