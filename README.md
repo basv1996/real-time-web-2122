@@ -74,7 +74,7 @@ For this project I skecthed multiple ideas for me to create. I Thought about a h
 ### Get response
 
 <details>
-<summary>
+<summary> response </summary>
 ```js
 {
     "abilities": [
@@ -10051,8 +10051,6 @@ For this project I skecthed multiple ideas for me to create. I Thought about a h
 }
 
 ```
-
-</summary>
 
 </details>
 
