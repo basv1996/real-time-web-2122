@@ -1,0 +1,23 @@
+<%- include('./partials/head.ejs'); %> 
+<bod>
+    <header>
+        <h1>Who's that Pokemon?</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome!</h2>
+            <img src="<%- results.sprites.other.dream_world.front_default %>" />
+            <p><%- results.forms[0].name %></p>
+            <p>Try to guess the pokemon</p>
+           <form action="/gameScreen" method="get">
+                <input type="text" placeholder="Display name" name="name" minlength="1" required="required">
+            <button type='submit'>Start playing 👾</button>
+           </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyleft 2022, all wrongs reversed.</p>
+    </footer>
+
+<%- include('./partials/footer.ejs'); %> 

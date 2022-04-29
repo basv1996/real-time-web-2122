@@ -1,0 +1,39 @@
+<%- include('./partials/head.ejs'); %> 
+<body>
+    <header>
+        <h1>Who is that pokemon???</h1>
+    </header>
+
+    <main>
+        <p> <%- results %></p>
+        <img id="plaatjePokemon" src="<%- //results.sprites.front_default %>" alt="Pokemon plaatje">
+        <section>
+            <h2>Which pokemon is shown?</h2>
+            <p>First one in the chat to answer correct wins</p>
+
+            <div class="score"> 
+                <h2></h2>
+                <ul id="score">
+                        
+                </ul>
+            </div>
+
+        </section>
+
+        <section>
+            <h2>Chat</h2>
+            <ul>
+            </ul>
+            <form action="" id="chat">
+                <input type="text" placeholder="type here...">
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+    </main>
+   
+<!-- socket makes his own folder just like the public folder we make, with this you can call io() in your own script -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/script.js"></script>
+
+<%- include('./partials/footer.ejs'); %> 
