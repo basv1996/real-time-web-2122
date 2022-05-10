@@ -5,14 +5,15 @@
     </header>
 
     <main>
-        <p> <%- results %></p>
-        <img id="plaatjePokemon" src="<%- //results.sprites.front_default %>" alt="Pokemon plaatje">
         <section>
             <h2>Which pokemon is shown?</h2>
             <p>First one in the chat to answer correct wins</p>
+            <div id="pokemonImgContainter">
+
+            </div>
 
             <div class="score"> 
-                <h2></h2>
+                <h2>ScoreBoard</h2>
                 <ul id="score">
                         
                 </ul>
@@ -21,11 +22,13 @@
         </section>
 
         <section>
+            <p>There are <span id="count"></span> user(s) online</p>
+            <p class="feedback"></p>
             <h2>Chat</h2>
-            <ul>
+            <ul id="messages">
             </ul>
-            <form action="" id="chat">
-                <input type="text" placeholder="type here...">
+            <form action="" id="chatForm">
+                <input id="inputPokemon" type="text" placeholder="type here..." autocomplete="off" >
                 <button type="submit">Send</button>
             </form>
         </section>

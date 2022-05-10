@@ -1,8 +1,12 @@
-// route homepage
-const home =  function (req, res) {
-    //response render home from views folder
-    res.render('home');
-}
+const express = require('express')
+const router = express.Router()
 
-//export route
-module.exports = home;
+router
+.get('/', (req, res) => {
+    res.render('home')
+})
+.get('/gameScreen', (req, res) => {
+    res.render('gameScreen')
+})
+
+module.exports = router
