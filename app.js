@@ -57,27 +57,6 @@ const randomSortedPokemon = async () => {
     return dataSorted
 }
 
-// execute function to get data and sort order randomly.
-// randomSortedPokemon()
-// //.then(results => results.json())
-//     .then(results  => {
-//         console.log('order being randomized and data fetched')
-//         //console.log(results)
-//         //console.log(JSON.stringify(results))
-//         app.get('/gameScreen', (req, res) => {
-//             res.render('gameScreen', {
-//                 results: results
-//             });
-//           });
-//         return results
-//     })
-
-//     app.get('/', (req, res) => {
-//         res.render('home');
-//       });
-
-    //console.log("data : ", results)
-
 ////////////////////////////////
 //____ Socket Connection  ____//
 ////////////////////////////////
@@ -103,6 +82,7 @@ io.on('connection', (socket) => {
         randomSortedPokemon()
         .then(results  => {
             io.emit("random-pokemon", results)
+            io.emit("update-scoreBoard", users)
             console.log("de gebr: ", users)
         })
     })
@@ -115,7 +95,8 @@ io.on('connection', (socket) => {
 
     socket.on('chat-message', (msg) => {
             if(msg === dataSorted.forms[0].name) {
-                io.emit("good-guess")
+                io.emit("good-guess", users)
+                //socket.broadcast.emit("good-guess", users)
                 users[socket.id].score++
         }
         console.log(dataSorted.forms[0].name)
