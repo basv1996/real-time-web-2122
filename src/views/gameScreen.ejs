@@ -1,5 +1,5 @@
 <%- include('./partials/head.ejs'); %> 
-<body>
+<body id="gamePage">
     <header>
         <h1>Who is that pokemon???</h1>
     </header>
@@ -8,29 +8,34 @@
         <section>
             <h2>Which pokemon is shown?</h2>
             <p>First one in the chat to answer correct wins</p>
+        </section>
+        <section>
             <div id="pokemonImgContainter">
-
+                <button id="giveHint1">Get a hint</button>
             </div>
-
+        </section>
+         <section>
             <div class="score"> 
                 <h2>ScoreBoard</h2>
-                <ul id="score">
-                        
+                <ul id="score"> 
                 </ul>
             </div>
-
         </section>
-
-        <section>
+        <section id="chat-area">
+            <div>
             <p>There are <span id="count"></span> user(s) online</p>
             <p class="feedback"></p>
             <h2>Chat</h2>
+            </div>
+            <div>
+           
             <ul id="messages">
             </ul>
             <form action="" id="chatForm">
                 <input id="inputPokemon" type="text" placeholder="type here..." autocomplete="off" >
                 <button type="submit">Send</button>
             </form>
+            </div>
         </section>
 
     </main>

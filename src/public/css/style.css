@@ -2,8 +2,107 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	
 }
+
+ul {
+	list-style-type: none;
+}
+html, body {
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	font-family: 'Joti One', cursive, Arial, sans-serif;
+	color: #FFCB04;		text-shadow: 3px 3px 0 #39569E, -1px -1px 0 #39569E, 1px -1px 0 #39569E, -1px 4px 0 #39569E, 1px 1px 0 #39569E;
+	background: #00b09b; /* fallback for old browsers */		background: -webkit-linear-gradient(to bottom, #00b09b, #96c93d); /* Chrome 10-25, Safari 5.1-6 */
+}
+
+button {
+	margin: 1em;
+	padding: 2em;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	border: none;
+	box-shadow: 2px 2px 2px #ddd;
+	border-radius: 5px;
+}
+
 #pokemonImgContainter img {
 	filter: contrast(0%);
+	max-width: 150px;
+}
+
+#gamePage {
+	background: #00b09b; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #00b09b, #96c93d); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #00b09b, #96c93d); 
+}
+
+#gamePage main {
+	height: 80vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#gamePage main section:first-of-type {
+	grid-row-start: 1;
+	grid-column-start: 2;
+}
+
+#gamePage main section:nth-of-type(2) {
+	grid-column-start: 2;
+	grid-row-start: 2;
+	grid-row-end: 5
+}
+
+#gamePage main section:nth-of-type(2) div {
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: space-around;
+	height: 100%;
+}
+
+#gamePage main section#chat-area {
+	background-color: red;
+	grid-column-start: 3;
+	grid-row-start: 1;
+	grid-row-end: -1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 2px solid blue;
+	border-radius: 10px;
+}
+
+#gamePage main section#chat-area div:last-of-type {
+	max-height: 75vh;
+	text-align: left;
+	padding: 1em;
+}
+
+#messages {
+	margin-top: 1em;
+	height: calc(100% - 6rem);
+	background-color: rgb(26, 12, 12);
+	margin-bottom: .5em;
+	border-radius: .5em;
+	padding: 1em;
+	/* padding-bottom: 0; */
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+#chatForm {
+	display: flex;
+	align-content: center;
+	align-items: center;
+}
+
+#chatForm input {
+	height: 3em;
 }

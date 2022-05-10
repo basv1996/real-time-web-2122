@@ -13,6 +13,7 @@ const feedbackTxt = document.querySelector(".feedback")
 const pokImgCont = document.getElementById('pokemonImgContainter')
 const createImage = document.createElement('img')
 const scoreUL = document.getElementById('score')
+const hintBtn = document.getElementById('giveHint1')
 
 const myName = prompt("what is your name?") || `user${Date.now()}`
 appendMessage('You joined')
@@ -35,15 +36,9 @@ socket.on("random-pokemon", results => {
 })
 
 socket.on("user-connected", (results) => {
-  // userName = document.createElement('li')
-  // userName.textContent = myName
-  // scoreUL.appendChild(userName)
-
-  //Create pokemon sprite with no contrast
   createImage.src = results.sprites.other.dream_world.front_default
   createImage.alt = "pokemon image" 
   pokImgCont.appendChild(createImage)
-
 });
 
 socket.on("update-scoreBoard", (users) => {
@@ -103,3 +98,7 @@ function appendMessage(msg) {
   item.textContent = msg
   messages.appendChild(item)
 }
+
+hintBtn.addEventListener("click", ()=>{
+  createImage.style.filter = "contrast(3%)"
+})
