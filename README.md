@@ -1,9 +1,9 @@
 # Real-Time Web @cmda-minor-web 2021 - 2022
 
-![Interface van de app](https://raw.githubusercontent.com/basv1996/progressive-web-apps-2122/main/docs/img/.....)
+![Interface van de app](https://user-images.githubusercontent.com/15678757/167723293-099e38e7-fe16-4cc2-835a-918493c3d47c.png)
 
 # Live Link
-:globe_with_meridians: [Link naar live app](https://browser-technology-2122.herokuapp.com/)
+:globe_with_meridians: [Link naar live app](https://real-time-web-2122.herokuapp.com)
 
 ---
 
@@ -10055,23 +10055,48 @@ For this project I skecthed multiple ideas for me to create. I Thought about a h
 
 </details>
 
+## Sockets
+This app is created with sockets. A socket is an endpoint of a communication between two programs running on a network. Sockets are used to create a connection between a client program and a server program. Sockets API is available in the Node. js net module.
 
+Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server. WebSocket is a communication protocol which provides a full-duplex and low-latency channel between the server and the browser.
+
+
+Below here in the image you can see how the server talks with the client
+![Example of sockets code](https://user-images.githubusercontent.com/15678757/167725010-8a921c41-fab5-4444-91ce-2375b6fafaeb.png)
+
+### user-connected
+
+When a user Connects a counter will add one to display all the active users. This will  emit the event usercnt. 
+After that there will be a user-connected socket which loads the user data into an object. 
+Then randomPokemon function will be executed and the results will be emitted to the user-connected event.
+
+### new-pokemon
+Every time when a user guesses the right answer on a pokemon it has to put out a new pokemon. So with the new-pokemon socket the randomSortPokemon function will be called again and emitted to the random-pokemon event. The ScoreBoard will be updated as well.
+
+### disconnect
+When a user leaves the page the user count will drop by one and the event will be emitted. Also the user will be deleted from the users object by his correspondig socket ID.
+
+### chat-message
+When the user types a message and it's the same as the name of the pokemon the event for good-guess will be emitted. Also the message will be broadcasted in the chat to all the players that are currently playing the game.
 
 ## API
-The API I chose is the pokemon API. With this API I can get all the pokemons with their sprite and statistics. 
+The API I chose is the [pokemon API](https://pokeapi.co/). With this API I can get all the pokemons with their sprite and statistics. This is a full RESTful API linked to an extensive database detailing everything about the Pokémon main game series.
+
+The API does not require a key to use it's data. YOu can acces the data of a pokemon by just simply putting it's name or id number behind the base URL.
+![How to use the API](https://user-images.githubusercontent.com/15678757/167724415-2b5f88a9-c47f-4271-8edf-47e394a8ff1b.png)
 
 ## :clipboard:MOSCOW feature list
 #### Must have:
-* [ ] Chatting with display name
-* [ ] Guess correct with feedback
-* [ ] Loading API data
+* [X] Chatting with display name
+* [X] Guess correct with feedback
+* [X] Loading API data
 
 
 #### Should have: 
-* [ ] Chat history
-* [ ] Scoreboard
+* [X] Chat history
+* [X] Scoreboard
 * [ ] UI-stack
-* [ ] Next question button
+* [ ] Next question / I give up button
 
 
  
@@ -10079,7 +10104,7 @@ The API I chose is the pokemon API. With this API I can get all the pokemons wit
 * [ ] Chat timestamps
 * [ ] Detailed stats
 * [ ] Profile authentication
-* [ ] Give me a hint button
+* [X] Give me a hint button
 
 
 #### Would have:

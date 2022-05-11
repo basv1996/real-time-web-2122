@@ -64,19 +64,17 @@ const randomSortedPokemon = async () => {
 io.on('connection', (socket) => {
     userCount++
     io.emit('usercnt', userCount)
-
     socket.on('user-connected', (myName) => {
         users[socket.id] = {
             myName: myName,
             score: 0,
-            id: socket.id
-        }
+            id: socket.id        }
         randomSortedPokemon()
         .then(results  => {
             console.log(results.forms[0].name)
          io.emit("user-connected", results)
     })
-    })
+})
 
     socket.on("new-pokemon", ()=>{
         randomSortedPokemon()
@@ -101,7 +99,9 @@ io.on('connection', (socket) => {
         }
         console.log(dataSorted.forms[0].name)
       
-        socket.broadcast.emit('chat-message', { msg: msg, myName: users[socket.id].myName })
+        socket.broadcast.emit('chat-message', { 
+            msg: msg, 
+            myName: users[socket.id].myName })
       });
 
 })

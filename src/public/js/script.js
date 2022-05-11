@@ -2,9 +2,7 @@ var socket = io();
 
 console.log("goeie connectie manbro")
 
-socket.on('usercnt', (msg) => {
-  document.querySelector("#count").innerHTML=msg
-})
+
 
 const messages = document.getElementById('messages');
 const form = document.getElementById('chatForm');
@@ -18,6 +16,10 @@ const hintBtn = document.getElementById('giveHint1')
 const myName = prompt("what is your name?") || `user${Date.now()}`
 appendMessage('You joined')
 socket.emit('user-connected', myName)
+
+socket.on('usercnt', (msg) => {
+  document.querySelector("#count").innerHTML=msg
+})
 
 socket.on('chat-message', (data)=> {
   console.log("de data: ", data)
@@ -42,28 +44,13 @@ socket.on("user-connected", (results) => {
 });
 
 socket.on("update-scoreBoard", (users) => {
-  //console.log(Object.values(users))
   scoreUL.innerHTML = ''
   Object.values(users).forEach((user)=>{
     userNameAndScore = document.createElement('li')
-    // userNameAndScore.textContent = ''
     userNameAndScore.textContent = (`${user.myName}: ${user.score}`)
     scoreUL.appendChild(userNameAndScore)
-   // console.log("naam: ", user.myName)
-    //console.log("score: ", user.score)
   })
-
- // console.log(users.myName)
-   //userName = document.createElement('li')
-   //userName.textContent = users.myName
-  // scoreUL.appendChild(userName)
-
 })
-
-
-function updateScore() {
-
-}
 
 socket.on("good-guess", () => {
     feedbackTxt.innerHTML = "you guessed correctly"

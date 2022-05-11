@@ -80,7 +80,7 @@ button {
 }
 
 #gamePage main section#chat-area div:last-of-type {
-	max-height: 75vh;
+	max-height: 70vh;
 	text-align: left;
 	padding: 1em;
 }
