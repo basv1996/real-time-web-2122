@@ -9,11 +9,15 @@
 
 # Table of Contents
 - [Live link ](#live-link)
-- [Description](#project-description)
-- [Communication](#communication)
-- [Goals](#goals)
-- [Grading](#grading)
-- [Programme](#programme)
+- [Description](#bookproject-description)
+- [Installation](#gearinstallation)
+- [Ideation](#ideation)
+- [Data Model](#data-model)
+- [Sockets](#sockets)
+- [Data Life cycle](#Data-Life-cycle)
+- [API](#api)
+- [Feature List](#clipboardmoscow-feature-list)
+- [NPM Packages](#package-npm-packages)
 
 ---
 
@@ -10078,6 +10082,9 @@ When a user leaves the page the user count will drop by one and the event will b
 
 ### chat-message
 When the user types a message and it's the same as the name of the pokemon the event for good-guess will be emitted. Also the message will be broadcasted in the chat to all the players that are currently playing the game.
+
+## Data Life cycle
+![Data Life Cycle](https://user-images.githubusercontent.com/15678757/168246439-52418731-29ae-47fc-8d25-053305151f1b.png)
 
 ## API
 The API I chose is the [pokemon API](https://pokeapi.co/). With this API I can get all the pokemons with their sprite and statistics. This is a full RESTful API linked to an extensive database detailing everything about the Pokémon main game series.
